@@ -1,0 +1,113 @@
+@import url(//db.onlinewebfonts.com/c/c428a3ca87a613a4e713cd009a9c54a5?family=Replica+ProTT+Heavy);
+@font-face {
+  font-family: "Replica ProTT Heavy";
+  src: url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.eot");
+  src: url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.svg#Replica ProTT Heavy")
+      format("svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+  cursor: none;
+}
+.headset {
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  user-select: none;
+}
+.click {
+  position: fixed;
+  font-size: 1.5em;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%);
+  font-family: "Oswald", sans-serif;
+}
+.click.white {
+  color: white;
+}
+.click.black {
+  color: black;
+}
+.click span {
+  color: gray;
+  animation: fadeIn 0.5s infinite ease-out alternate;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .slide.slide1 {
+  overflow: hidden;
+  z-index: 25;
+  background-color: white;
+  left: 50%;
+  clip: rect(0, auto, auto, 0);
+}
+.container .slide.slide2 {
+  background-color: black;
+}
+.edge {
+  position: inherit;
+  width: 30px;
+  height: 100%;
+  z-index: 100;
+}
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  transform: translate(-0.5%);
+  width: 300px;
+  font-family: "Replica ProTT Heavy";
+}
+.logo.black {
+  fill: black;
+}
+.logo.white {
+  fill: white;
+}
+.logo.white h1 {
+  color: white;
+}
+.cursor {
+  z-index: 5000000;
+  background: gray;
+  border-radius: 50%;
+  width: 2vh;
+  height: 2vh;
+  position: absolute;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}

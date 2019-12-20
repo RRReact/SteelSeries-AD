@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:600&display=swap" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/c428a3ca87a613a4e713cd009a9c54a5?family=Replica+ProTT+Heavy" rel="stylesheet"
+        type="text/css" />
+    <title>SteelSeries</title>
+</head>
+
+<body onload="addSlideEventListener()">
+    <div class="cursor"></div>
+    <div class="container">
+        <div onmouseenter="cursorColorChange('black')" class="slide slide1" id="slide">
+            <div class="logo black">
+                <img src="/assets/steelseriesBlack.svg" alt="">
+                <h1>Artics 5</h1>
+            </div>
+            <div class="edge"></div>
+            <img class="headset" src="/assets/black.png" alt="">
+            <div class="click black">
+                <p>Drag the edge and explore</p>
+            </div>
+        </div>
+        <div onmouseenter="cursorColorChange('white')" class="slide slide2">
+            <div class="logo white">
+                <img src="/assets/steelseriesWhite.svg" alt="">
+                <h1>Artics 5</h1>
+            </div>
+            <img class="headset" src="/assets/white.png" alt="">
+            <div class="click white">
+                <p>Drag the edge and explore</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
