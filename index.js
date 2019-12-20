@@ -38,5 +38,9 @@ const slide = (event) => {
     }
     all.addEventListener("mouseup", removeSlideEventListener, true)
 }
-
-const cursorColorChange = (color) => { cursor.style.background = color }
+const cursorShow = () => { cursor.style.display = "inline" }
+const cursorHide = () => { cursor.style.display = "none" }
+const cursorColorChange = (color, borderColor) => {
+    cursor.style.background = color
+    cursor.style.border = `1px solid ${borderColor}`
+}

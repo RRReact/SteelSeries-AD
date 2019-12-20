@@ -12,10 +12,10 @@
     <title>SteelSeries</title>
 </head>
 
-<body onload="addSlideEventListener()">
+<body onmouseenter="cursorShow()" onload="addSlideEventListener()">
     <div class="cursor"></div>
     <div class="container">
-        <div onmouseenter="cursorColorChange('black')" class="slide slide1" id="slide">
+        <div onmouseenter="cursorColorChange('white','black')" class="slide slide1" id="slide">
             <div class="logo black">
                 <img src="/assets/steelseriesBlack.svg" alt="">
                 <h1>Artics 5</h1>
@@ -26,7 +26,7 @@
                 <p>Drag the edge and explore</p>
             </div>
         </div>
-        <div onmouseenter="cursorColorChange('white')" class="slide slide2">
+        <div onmouseenter="cursorColorChange('black','white')" class="slide slide2">
             <div class="logo white">
                 <img src="/assets/steelseriesWhite.svg" alt="">
                 <h1>Artics 5</h1>

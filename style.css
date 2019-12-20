@@ -100,7 +100,7 @@ body {
 }
 .cursor {
   z-index: 5000000;
-  background: gray;
+  background: black;
   border-radius: 50%;
   width: 2vh;
   height: 2vh;
