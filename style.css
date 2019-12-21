@@ -47,7 +47,6 @@ body {
   color: black;
 }
 .click span {
-  color: gray;
   animation: fadeIn 0.5s infinite ease-out alternate;
 }
 .container {
