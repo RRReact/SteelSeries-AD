@@ -1,34 +1,25 @@
 const text = document.querySelectorAll(".click");
 const edge = document.querySelector(".edge");
 const slider = document.getElementById("slide");
-const right = document.querySelector(".slide1")
-const left = document.querySelector(".slide2")
-const cursor = document.querySelector(".cursor")
-const all = document.body
+const right = document.querySelector(".slide1");
+const left = document.querySelector(".slide2");
+const all = document.body;
+const colors = document.querySelectorAll(".colors")
+const white = document.querySelectorAll(".whiteClick")
+const black = document.querySelectorAll(".blackClick")
 
-right.addEventListener("mouseenter", () => cursorColorChange("white", "black"));
-left.addEventListener("mouseenter", () => cursorColorChange("black", "white"));
+
 edge.addEventListener("mousedown", () => drag(event));
-window.onmousemove = (e) => {
-    let x = e.clientX;
-    let y = e.clientY
-    cursor.style.left = x + "px"
-    cursor.style.top = y + "px"
-}
+edge.addEventListener("mousedown", () => drag(event));
 
+white.forEach(item => { item.addEventListener("click", () => blackOrWhite("white")) })
+black.forEach(item => { item.addEventListener("click", () => blackOrWhite("black")) })
 
 const removeDragEventListener = () => {
     text.forEach(item => { item.innerHTML = "Drag the edge and explore" });
-    window.onmousemove = (e) => {
-        cursor.style.display = "inline"
-        let x = e.clientX;
-        let y = e.clientY
-        cursor.style.left = x + "px"
-        cursor.style.top = y + "px"
-    }
+    window.onmousemove = null
 }
 const drag = (event) => {
-    cursor.style.display = "none"
     event.preventDefault();
     text.forEach(item => { item.innerHTML = "<span><</span>Drag<span>></span>"; });
     window.onmousemove = (e) => {
@@ -37,10 +28,14 @@ const drag = (event) => {
     }
     all.addEventListener("mouseup", removeDragEventListener, true)
 }
-const cursorShow = () => { cursor.style.display = "inline" }
-const cursorHide = () => { cursor.style.display = "none" }
-const cursorColorChange = (color, borderColor) => {
-    cursor.style.backgroundColor = color
-    cursor.style.border = `1px solid ${borderColor}`
+
+const blackOrWhite = (color) => {
+    if (color === "white") {
+        gsap.to(right, 1, { left: 0, ease: "power2.in" })
+    } else if (color === "black") {
+        gsap.to(right, 1, { left: window.innerWidth, ease: "power2.in" })
+    }
 }
-all.addEventListener("mouseenter", cursorShow);
+
+
+
