@@ -31,7 +31,7 @@ body {
   bottom: 0;
   user-select: none;
 }
-.click {
+.text {
   position: fixed;
   font-size: 1.5em;
   left: 50%;
@@ -39,13 +39,11 @@ body {
   transform: translate(-50%);
   font-family: "Oswald", sans-serif;
 }
-.click.white {
+.text.white {
   color: white;
 }
-.click.black {
-  color: black;
-}
-.click span {
+
+.text span {
   animation: fadeIn 0.5s infinite ease-out alternate;
 }
 .container {
@@ -75,9 +73,18 @@ body {
 }
 .edge {
   position: inherit;
-  width: 50px;
+  width: 20px;
   height: 100%;
   z-index: 100;
+  cursor: ew-resize;
+}
+.edge2 {
+  transform: translateX(-100%);
+  position: inherit;
+  width: 20px;
+  height: 100%;
+  z-index: 100;
+  cursor: ew-resize;
 }
 .logo {
   position: fixed;
@@ -120,9 +127,14 @@ body {
 .whiteClick,
 .blackClick {
   display: flex;
+  transition: 0.3s;
 }
 .whiteClick {
   margin-bottom: 5%;
+}
+.whiteClick:hover,
+.blackClick:hover {
+  color: gray;
 }
 .slide2 .colors {
   color: white;
@@ -132,8 +144,34 @@ body {
   font-family: "Replica ProTT Heavy";
   font-size: 1.5em;
 }
-.colors h1:hover {
-  color: gray;
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  position: fixed;
+  top: 25%;
+  left: 2%;
+  color: black;
+}
+.features h1 {
+  font-family: "Replica ProTT Heavy";
+  font-size: 1em;
+}
+.features p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75em;
+}
+.feature {
+  width: 20vh;
+  margin: 1% 1% 1%;
+}
+.feature img {
+  border: 1px solid black;
+  border-radius: 10%;
+  width: 20vh;
+}
+.feature-text {
+  width: 20vh;
 }
 @keyframes fadeIn {
   from {
