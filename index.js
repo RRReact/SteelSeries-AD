@@ -6,8 +6,8 @@ const right = document.querySelector(".slide1");
 const left = document.querySelector(".slide2");
 const all = document.body;
 const colors = document.querySelectorAll(".colors")
-const white = document.querySelectorAll(".whiteClick")
-const black = document.querySelectorAll(".blackClick")
+const white = document.querySelectorAll(".white-click")
+const black = document.querySelectorAll(".black-click")
 
 window.onmousemove = (e) => {
     let x = getComputedStyle(right).left;

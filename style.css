@@ -116,24 +116,24 @@ body {
   height: 3vh;
   width: 3vh;
 }
-.whiteCircle {
+.white-circle {
   border: 1px solid black;
   background-color: white;
 }
-.blackCircle {
+.black-circle {
   border: 1px solid white;
   background-color: black;
 }
-.whiteClick,
-.blackClick {
+.white-click,
+.black-click {
   display: flex;
   transition: 0.3s;
 }
-.whiteClick {
+.white-click {
   margin-bottom: 5%;
 }
-.whiteClick:hover,
-.blackClick:hover {
+.white-click:hover,
+.black-click:hover {
   color: gray;
 }
 .slide2 .colors {
@@ -147,7 +147,7 @@ body {
 .features {
   display: flex;
   flex-wrap: wrap;
-  width: 30%;
+  width: 32%;
   position: fixed;
   top: 25%;
   left: 2%;
@@ -162,17 +162,28 @@ body {
   font-size: 0.75em;
 }
 .feature {
-  width: 20vh;
+  width: 42%;
   margin: 1% 1% 1%;
 }
 .feature img {
   border: 1px solid black;
   border-radius: 10%;
-  width: 20vh;
+  width: 100%;
+  max-width: 250px;
 }
 .feature-text {
-  width: 20vh;
+  width: 100%;
 }
+
+@media (max-width: 1270px) {
+}
+@media (max-width: 977px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 480px) {
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
