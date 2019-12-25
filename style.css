@@ -113,8 +113,8 @@ body {
 }
 .circle {
   border-radius: 50%;
-  height: 3vh;
-  width: 3vh;
+  height: 2.5vh;
+  width: 2.5vh;
 }
 .white-circle {
   border: 1px solid black;
@@ -149,9 +149,10 @@ body {
   flex-wrap: wrap;
   width: 32%;
   position: fixed;
-  top: 25%;
-  left: 2%;
-  color: black;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2%;
+  color: white;
 }
 .features h1 {
   font-family: "Replica ProTT Heavy";
@@ -166,7 +167,6 @@ body {
   margin: 1% 1% 1%;
 }
 .feature img {
-  border: 1px solid black;
   border-radius: 10%;
   width: 100%;
   max-width: 250px;
@@ -174,7 +174,14 @@ body {
 .feature-text {
   width: 100%;
 }
-
+.specifications {
+  position: fixed;
+  top: 25%;
+  left: 2%;
+  background-color: gray;
+  height: 50vh;
+  width: 32%;
+}
 @media (max-width: 1270px) {
 }
 @media (max-width: 977px) {
