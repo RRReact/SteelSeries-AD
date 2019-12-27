@@ -31,6 +31,7 @@ body {
   bottom: 0;
   user-select: none;
 }
+
 .text {
   position: fixed;
   font-size: 1.5em;
@@ -187,6 +188,17 @@ body {
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px dotted black;
+}
+.responsive-features-section {
+  box-sizing: border-box;
+  background-color: white;
+  z-index: 1510505105105;
+  position: relative;
+}
+.responsive-specifications-section {
+  background-color: white;
+  z-index: 1510505105106;
+  position: relative;
 }
 @media (max-width: 1200px) {
 }
