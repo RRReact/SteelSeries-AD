@@ -258,7 +258,47 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .colors {
+    font-size: 0.8em;
+  }
+  .circle {
+    height: 2vh;
+    width: 2vh;
+  }
+  .text {
+    font-size: 1em;
+  }
+  .headset {
+    width: 40%;
+  }
+  .responsive-features-section {
+    height: 100vh;
+  }
+  .responsive-features {
+    flex-wrap: wrap;
+  }
+  .feature {
+    justify-content: flex-start;
+    width: 48%;
+  }
+  .feature-text h1 {
+    text-align: center;
+    font-size: 1.3em;
+  }
+  .feature-text p {
+    font-size: 0.85em;
+  }
+  .responsive-specifications-section {
+    height: 100vh;
+  }
+  .responsive-specifications h1 {
+    font-size: 1.5em;
+  }
+  .responsive-specifications p {
+    font-size: 1em;
+  }
 }
+
 @media (max-width: 480px) {
 }
 
