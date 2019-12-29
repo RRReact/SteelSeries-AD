@@ -140,8 +140,8 @@ const responsiveY = y => {
 const startAnimation = () => {
 
 
-    const checkWidthSpec = () => { if (x.matches) { return "none" } else { return "none" } }
-    const checkWidthFeat = () => { if (x.matches) { return "none" } else { return "initial" } }
+    const checkWidthSpec = () => { if (x.matches) { return "none" } else { return "initial" } }
+    const checkWidthFeat = () => { if (x.matches) { return "none" } else { return "flex" } }
 
     const tl = gsap.timeline();
     tl.set([right, blackHeadset, whiteHeadset, text], { opacity: 1 })
