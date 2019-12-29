@@ -23,6 +23,7 @@ body {
   overflow: hidden;
 }
 .headset {
+  opacity: 0;
   position: fixed;
   margin: auto;
   left: 0;
@@ -33,6 +34,7 @@ body {
 }
 
 .text {
+  opacity: 0;
   position: fixed;
   font-size: 1.5em;
   left: 50%;
@@ -63,6 +65,7 @@ body {
 }
 
 .container .slide.slide1 {
+  opacity: 0;
   overflow: hidden;
   z-index: 102;
   background-color: white;
@@ -88,6 +91,7 @@ body {
   cursor: ew-resize;
 }
 .logo {
+  opacity: 0;
   position: fixed;
   top: 10px;
   left: 10px;
@@ -106,6 +110,7 @@ body {
 }
 
 .colors {
+  opacity: 0;
   z-index: 101;
   position: fixed;
   left: 2%;

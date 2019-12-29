@@ -29,9 +29,8 @@ window.ontouchmove = (e) => {
     let x = getComputedStyle(right).left;
     edge2.style.left = x;
 }
-window.onload = () => {
-    startAnimation();
-}
+window.onload = () => { startAnimation() }
+document.onload = () => { startAnimation }
 edge.addEventListener("mousedown", () => mouseDrag(event));
 edge.addEventListener("touchstart", () => touchDrag(event), { passive: true });
 
@@ -145,10 +144,11 @@ const startAnimation = () => {
     const checkWidthFeat = () => { if (x.matches) { return "none" } else { return "initial" } }
 
     const tl = gsap.timeline();
-    tl.from(right, { duration: 1, x: innerWidth })
-        .set(right, { clearProps: "all" })
-        .from(logo, { duration: 1, opacity: 0 })
-        .from(colors, { duration: 1, opacity: 0 }, "<")
+    tl.set([right, blackHeadset, whiteHeadset, text], { opacity: 1 })
+        .from(right, { duration: 1, x: innerWidth })
+        .set(right, { clearProps: "transform" })
+        .to(logo, { duration: 1, opacity: 1 })
+        .to(colors, { duration: 1, opacity: 1 }, "<")
         .from(blackHeadset, { duration: 1, x: innerWidth }, "<")
         .from(whiteHeadset, { duration: 1, x: -innerWidth }, "<")
         .from(text, { duration: 1, x: -innerWidth }, "<")
