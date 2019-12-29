@@ -5,11 +5,14 @@ const slider = document.getElementById("slide");
 const right = document.querySelector(".slide1");
 const left = document.querySelector(".slide2");
 const colors = document.querySelectorAll(".colors");
+const logo = document.querySelectorAll(".logo");
 const white = document.querySelectorAll(".white-click");
 const black = document.querySelectorAll(".black-click");
 const features = document.querySelector(".features")
 const specifications = document.querySelector(".specifications");
-const main = document.querySelector(".main")
+const main = document.querySelector(".main");
+const blackHeadset = document.querySelector(".black-h")
+const whiteHeadset = document.querySelector(".white-h")
 const all = document.body;
 
 let x = window.matchMedia("(max-width:1366px)");
@@ -25,6 +28,9 @@ window.onmousemove = (e) => {
 window.ontouchmove = (e) => {
     let x = getComputedStyle(right).left;
     edge2.style.left = x;
+}
+window.onload = () => {
+    startAnimation();
 }
 edge.addEventListener("mousedown", () => mouseDrag(event));
 edge.addEventListener("touchstart", () => touchDrag(event), { passive: true });
@@ -74,6 +80,7 @@ const blackOrWhite = (color) => {
         gsap.to(right, 1, { left: 0, ease: "power2.in" })
     }
 }
+//MediaQuery max-width:1366
 const responsiveX = x => {
     function insterAfter(afterNode, newNode) {
         return afterNode.parentNode.insertBefore(newNode, main.afterNode);
@@ -84,49 +91,72 @@ const responsiveX = x => {
         //create 2 empty sections 
         featuresSection = document.createElement("section");
         specificationsSection = document.createElement("section");
+
         //clone nodes
         const clonedFeatures = features.cloneNode(true);
         const clonedSpecifications = specifications.cloneNode(true);
+
         //remove classes from cloned nodes
         clonedFeatures.removeAttribute("class");
         clonedSpecifications.removeAttribute("class");
-        //remove feature class from childern of cloned nodes
-        const removeFeatureClass = Array.from(clonedFeatures.children);
-        removeFeatureClass.forEach(item => item.classList.remove("feature"))
-        //add classes
-        clonedFeatures.classList.add("responsive-features")
-        clonedSpecifications.classList.add("responsive-specifications")
+
+        //add new classes classes
+        clonedFeatures.classList.add("responsive-features");
+        clonedSpecifications.classList.add("responsive-specifications");
+
         //add cloned nodes to created sections 
-        featuresSection.appendChild(clonedFeatures)
-        specificationsSection.appendChild(clonedSpecifications)
+        featuresSection.appendChild(clonedFeatures);
+        specificationsSection.appendChild(clonedSpecifications);
+
         //insert to document
         const newFeaturesSection = insterAfter(main, featuresSection);
-        const newSpecificationsSection = insterAfter(newFeaturesSection, specificationsSection)
+        const newSpecificationsSection = insterAfter(newFeaturesSection, specificationsSection);
+
         //add classes
         newFeaturesSection.classList.add("responsive-features-section");
         newSpecificationsSection.classList.add("responsive-specifications-section");
+
         /// set display:none to "features" and "specifications"
         specifications.style.display = "none";
         features.style.display = "none";
+
         //set overflow
-        all.style.overflow = "visible";
-        all.style.overflowX = "hidden"
+        all.style.overflow = "visible"
+
 
 
 
     }
 }
+//MediaQuery min-width:1366
 const responsiveY = y => {
     if (y.matches === true && all.contains(document.querySelector(".responsive-features-section"))) {
         featuresSection.remove();
         specificationsSection.remove();
-        features.style.display = "initial";
-        specifications.style.display = "initial";
-
-
+        features.style.display = "flex";
+        specifications.style.display = "flex";
+        specifications.style.flexDirection = "column";
     }
+}
+const startAnimation = () => {
+
+
+    const checkWidthSpec = () => { if (x.matches) { return "none" } else { return "none" } }
+    const checkWidthFeat = () => { if (x.matches) { return "none" } else { return "initial" } }
+
+    const tl = gsap.timeline();
+    tl.from(right, { duration: 1, x: innerWidth })
+        .set(right, { clearProps: "all" })
+        .from(logo, { duration: 1, opacity: 0 })
+        .from(colors, { duration: 1, opacity: 0 }, "<")
+        .from(blackHeadset, { duration: 1, x: innerWidth }, "<")
+        .from(whiteHeadset, { duration: 1, x: -innerWidth }, "<")
+        .from(text, { duration: 1, x: -innerWidth }, "<")
+        .set(features, { display: checkWidthFeat })
+        .set(specifications, { display: checkWidthSpec })
 }
 responsiveX(x);
 responsiveY(y);
 x.addListener(responsiveX);
 y.addListener(responsiveY);
+

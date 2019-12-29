@@ -146,7 +146,7 @@ body {
   font-size: 1.5em;
 }
 .features {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   width: 32%;
   position: fixed;
@@ -164,6 +164,8 @@ body {
   font-size: 0.75em;
 }
 .feature {
+  display: flex;
+  flex-direction: column;
   width: 42%;
   margin: 1% 1% 1%;
 }
@@ -176,6 +178,8 @@ body {
   width: 100%;
 }
 .specifications {
+  transform: translateX(0.5%);
+  display: none;
   position: fixed;
   top: 25%;
   left: 2%;
@@ -190,19 +194,63 @@ body {
   border-bottom: 0.5px dotted black;
 }
 .responsive-features-section {
-  box-sizing: border-box;
+  height: 46vh;
   background-color: white;
   z-index: 1510505105105;
   position: relative;
 }
+.responsive-features {
+  height: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+}
+.responsive-features h1 {
+  font-family: "Replica ProTT Heavy";
+}
+.responsive-features p {
+  font-family: "Roboto", sans-serif;
+}
 .responsive-specifications-section {
   background-color: white;
+  height: 54vh;
   z-index: 1510505105106;
   position: relative;
 }
+.responsive-specifications h1,
+.responsive-specifications p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.responsive-specifications {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+  height: 100%;
+  justify-content: center;
+}
 @media (max-width: 1200px) {
 }
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
+  .feature {
+    align-items: center;
+    justify-content: center;
+    width: 23%;
+  }
+  .feature-text h1 {
+    text-align: center;
+    font-size: 1em;
+  }
+  .feature-text p {
+    font-size: 0.65em;
+  }
+  .responsive-specifications h1 {
+    font-size: 1.2em;
+  }
+  .responsive-specifications p {
+    font-size: 0.8em;
+  }
 }
 @media (max-width: 768px) {
 }
