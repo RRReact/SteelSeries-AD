@@ -1,17 +1,12 @@
 @import url(//db.onlinewebfonts.com/c/c428a3ca87a613a4e713cd009a9c54a5?family=Replica+ProTT+Heavy);
+
 @font-face {
   font-family: "Replica ProTT Heavy";
   src: url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.eot");
-  src: url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.woff2")
+  src: url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.woff2")
       format("woff2"),
     url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.svg#Replica ProTT Heavy")
-      format("svg");
+      format("woff");
 }
 
 * {
@@ -19,9 +14,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   overflow: hidden;
 }
+
 .headset {
   opacity: 0;
   position: fixed;
@@ -42,6 +39,7 @@ body {
   transform: translate(-50%);
   font-family: "Oswald", sans-serif;
 }
+
 .text.white {
   color: white;
 }
@@ -49,6 +47,7 @@ body {
 .text span {
   animation: fadeIn 0.5s infinite ease-out alternate;
 }
+
 .container {
   position: relative;
   width: 100%;
@@ -72,9 +71,11 @@ body {
   left: 50%;
   clip: rect(0, auto, auto, 0);
 }
+
 .container .slide.slide2 {
   background-color: black;
 }
+
 .edge {
   position: inherit;
   width: 20px;
@@ -82,6 +83,7 @@ body {
   z-index: 100;
   cursor: ew-resize;
 }
+
 .edge2 {
   transform: translateX(-100%);
   position: inherit;
@@ -90,6 +92,7 @@ body {
   z-index: 100;
   cursor: ew-resize;
 }
+
 .logo {
   opacity: 0;
   position: fixed;
@@ -99,12 +102,15 @@ body {
   width: 300px;
   font-family: "Replica ProTT Heavy";
 }
+
 .logo.black {
   fill: black;
 }
+
 .logo.white {
   fill: white;
 }
+
 .logo.white h1 {
   color: white;
 }
@@ -117,39 +123,48 @@ body {
   top: 15%;
   cursor: pointer;
 }
+
 .circle {
   border-radius: 50%;
   height: 2.5vh;
   width: 2.5vh;
 }
+
 .white-circle {
   border: 1px solid black;
   background-color: white;
 }
+
 .black-circle {
   border: 1px solid white;
   background-color: black;
 }
+
 .white-click,
 .black-click {
   display: flex;
   transition: 0.3s;
 }
+
 .white-click {
   margin-bottom: 5%;
 }
+
 .white-click:hover,
 .black-click:hover {
   color: gray;
 }
+
 .slide2 .colors {
   color: white;
 }
+
 .colors h1 {
   padding-left: 5%;
   font-family: "Replica ProTT Heavy";
   font-size: 1.5em;
 }
+
 .features {
   display: none;
   flex-wrap: wrap;
@@ -160,28 +175,34 @@ body {
   right: 2%;
   color: white;
 }
+
 .features h1 {
   font-family: "Replica ProTT Heavy";
   font-size: 1em;
 }
+
 .features p {
   font-family: "Roboto", sans-serif;
   font-size: 0.75em;
 }
+
 .feature {
   display: flex;
   flex-direction: column;
   width: 42%;
   margin: 1% 1% 1%;
 }
+
 .feature img {
   border-radius: 10%;
   width: 100%;
   max-width: 250px;
 }
+
 .feature-text {
   width: 100%;
 }
+
 .specifications {
   transform: translateX(0.5%);
   display: none;
@@ -193,40 +214,48 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 .row {
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px dotted black;
 }
+
 .responsive-features-section {
   height: 46vh;
   background-color: white;
   z-index: 1510505105105;
   position: relative;
 }
+
 .responsive-features {
   height: 100%;
   background-color: black;
   color: white;
   display: flex;
 }
+
 .responsive-features h1 {
   font-family: "Replica ProTT Heavy";
 }
+
 .responsive-features p {
   font-family: "Roboto", sans-serif;
 }
+
 .responsive-specifications-section {
   background-color: white;
   height: 54vh;
   z-index: 1510505105106;
   position: relative;
 }
+
 .responsive-specifications h1,
 .responsive-specifications p {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 .responsive-specifications {
   display: flex;
   flex-direction: column;
@@ -235,48 +264,61 @@ body {
   height: 100%;
   justify-content: center;
 }
+
 @media (max-width: 1200px) {
 }
+
 @media (max-width: 1366px) {
   .feature {
     align-items: center;
     justify-content: center;
     width: 23%;
   }
+
   .feature-text h1 {
     text-align: center;
     font-size: 1em;
   }
+
   .feature-text p {
     font-size: 0.65em;
   }
+
   .responsive-specifications h1 {
     font-size: 1.2em;
   }
+
   .responsive-specifications p {
     font-size: 0.8em;
   }
 }
+
 @media (max-width: 768px) {
   .colors {
     font-size: 0.8em;
   }
+
   .circle {
     height: 2vh;
     width: 2vh;
   }
+
   .text {
     font-size: 1em;
   }
+
   .headset {
     width: 40%;
   }
+
   .responsive-features-section {
     height: 100vh;
   }
+
   .responsive-features {
     flex-wrap: wrap;
   }
+
   .feature {
     justify-content: flex-start;
     width: 48%;
@@ -285,9 +327,11 @@ body {
   .responsive-specifications-section {
     height: 100vh;
   }
+
   .responsive-specifications h1 {
     font-size: 1.2em;
   }
+
   .responsive-specifications p {
     font-size: 0.8em;
   }
@@ -295,7 +339,30 @@ body {
 
 @media (max-width: 480px) {
 }
-
+@media (max-width: 768px) and (orientation: landscape) {
+  .headset {
+    width: 25%;
+  }
+  .colors {
+    top: 30%;
+  }
+  .circle {
+    height: 2vw;
+    width: 2vw;
+  }
+  .responsive-features {
+    flex-wrap: nowrap;
+  }
+  .feature {
+    padding-top: 8%;
+  }
+  .responsive-specifications h1 {
+    font-size: 1em;
+  }
+  .responsive-specifications p {
+    font-size: 0.7em;
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
