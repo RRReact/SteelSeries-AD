@@ -184,6 +184,7 @@ const startAnimation = () => {
     .set(features, { display: checkWidthFeat })
     .set(specifications, { display: checkWidthSpec });
 };
+
 responsiveX(x);
 responsiveY(y);
 x.addListener(responsiveX);
