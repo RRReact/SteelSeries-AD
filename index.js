@@ -155,14 +155,7 @@ const responsiveY = y => {
   }
 };
 const startAnimation = () => {
-  const checkWidthSpec = () => {
-    if (x.matches) {
-      return "none";
-    } else {
-      return "initial";
-    }
-  };
-  const checkWidthFeat = () => {
+  const checkWidth = () => {
     if (x.matches) {
       return "none";
     } else {
@@ -181,8 +174,8 @@ const startAnimation = () => {
     .from(blackHeadset, { duration: 1, x: innerWidth }, "<")
     .from(whiteHeadset, { duration: 1, x: -innerWidth }, "<")
     .from(text, { duration: 1, x: -innerWidth }, "<")
-    .set(features, { display: checkWidthFeat })
-    .set(specifications, { display: checkWidthSpec });
+    .set(features, { display: checkWidth })
+    .set(specifications, { display: checkWidth });
 };
 responsiveX(x);
 responsiveY(y);
