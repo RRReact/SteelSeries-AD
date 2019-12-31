@@ -1,17 +1,6 @@
-@import url(//db.onlinewebfonts.com/c/c428a3ca87a613a4e713cd009a9c54a5?family=Replica+ProTT+Heavy);
 @font-face {
   font-family: "Replica ProTT Heavy";
-  src: url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.eot");
-  src: url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/c428a3ca87a613a4e713cd009a9c54a5.svg#Replica ProTT Heavy")
-      format("svg");
+  src: ("Replica ProTT Heavy.ttf");
 }
 
 * {
