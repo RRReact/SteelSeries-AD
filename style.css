@@ -1,6 +1,11 @@
 @font-face {
   font-family: "Replica ProTT Heavy";
-  src: ("Replica ProTT Heavy.otf");
+  src: url("fonts/Replica ProTT Heavy.eot");
+  src: local("☺"), url("fonts/Replica ProTT Heavy.woff") format("woff"),
+    url("fonts/Replica ProTT Heavy.ttf") format("truetype"),
+    url("fonts/Replica ProTT Heavy.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
