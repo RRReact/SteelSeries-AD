@@ -1,0 +1,493 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Replica ProTT Heavy";
+  src: url("fonts/Replica ProTT Heavy.eot");
+  src: local("☺"), url("fonts/Replica ProTT Heavy.woff") format("woff"), url("fonts/Replica ProTT Heavy.ttf") format("truetype"), url("fonts/Replica ProTT Heavy.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.headset {
+  opacity: 0;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media (max-width: 767px) {
+  .headset {
+    width: 40%;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .headset {
+    width: 25%;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .headset {
+    width: 25%;
+  }
+}
+
+.text {
+  opacity: 0;
+  position: fixed;
+  font-size: 1.5em;
+  left: 50%;
+  top: 85%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  font-family: "Oswald", sans-serif;
+}
+
+.text.white {
+  color: white;
+}
+
+.text span {
+  -webkit-animation: fadeIn 0.5s infinite ease-out alternate;
+          animation: fadeIn 0.5s infinite ease-out alternate;
+}
+
+@media (max-width: 767px) {
+  .text {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .text {
+    font-size: 1em;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .slide.slide1 {
+  opacity: 0;
+  overflow: hidden;
+  z-index: 102;
+  background-color: white;
+  left: 50%;
+  clip: rect(0, auto, auto, 0);
+}
+
+.container .slide.slide2 {
+  background-color: black;
+}
+
+.container .slide.slide2 .colors {
+  color: white;
+}
+
+.edge {
+  position: inherit;
+  width: 20px;
+  height: 100%;
+  z-index: 100;
+  cursor: ew-resize;
+}
+
+.edge2 {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  position: inherit;
+  width: 20px;
+  height: 100%;
+  z-index: 100;
+  cursor: ew-resize;
+}
+
+.logo {
+  opacity: 0;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  -webkit-transform: translate(-0.5%);
+          transform: translate(-0.5%);
+  width: 300px;
+  font-family: "Replica ProTT Heavy";
+}
+
+.logo.black {
+  fill: black;
+}
+
+.logo.white {
+  fill: white;
+}
+
+.logo.white h1 {
+  color: white;
+}
+
+.colors {
+  opacity: 0;
+  z-index: 101;
+  position: fixed;
+  left: 2%;
+  top: 15%;
+  cursor: pointer;
+}
+
+.colors h1 {
+  padding-left: 5%;
+  font-family: "Replica ProTT Heavy";
+  font-size: 1.5em;
+}
+
+@media (max-width: 767px) {
+  .colors {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .colors {
+    top: 30%;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .colors {
+    top: 30%;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  height: 2.5vh;
+  width: 2.5vh;
+}
+
+@media (max-width: 767px) {
+  .circle {
+    height: 2vh;
+    width: 2vh;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .circle {
+    height: 2vw;
+    width: 2vw;
+  }
+}
+
+.white-circle {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.black-circle {
+  border: 1px solid white;
+  background-color: black;
+}
+
+.white-click,
+.black-click {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.white-click:hover,
+.black-click:hover {
+  color: gray;
+}
+
+.white-click {
+  margin-bottom: 5%;
+}
+
+.features {
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 32%;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 2%;
+  color: white;
+}
+
+.features h1 {
+  font-family: "Replica ProTT Heavy";
+  font-size: 1em;
+}
+
+.features p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75em;
+}
+
+.feature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 42%;
+  margin: 1% 1% 1%;
+}
+
+.feature img {
+  border-radius: 10%;
+  width: 100%;
+  max-width: 250px;
+}
+
+@media (max-width: 1366px) {
+  .feature {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 23%;
+  }
+}
+
+@media (max-width: 767px) {
+  .feature {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 48%;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .feature {
+    padding-top: 5%;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .feature {
+    padding-top: 5%;
+  }
+}
+
+.feature-text {
+  width: 100%;
+}
+
+@media (max-width: 1366px) {
+  .feature-text h1 {
+    text-align: center;
+    font-size: 1em;
+  }
+  .feature-text p {
+    font-size: 0.65em;
+  }
+}
+
+.specifications {
+  -webkit-transform: translateX(0.5%);
+          transform: translateX(0.5%);
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 2%;
+  height: 50vh;
+  width: 32%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 0.5px dotted black;
+}
+
+.responsive-features-section {
+  height: 46vh;
+  background-color: white;
+  z-index: 1510505105105;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .responsive-features-section {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .responsive-features-section {
+    height: 100vh;
+  }
+}
+
+.responsive-features {
+  height: 100%;
+  background-color: black;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.responsive-features h1 {
+  font-family: "Replica ProTT Heavy";
+}
+
+.responsive-features p {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 767px) {
+  .responsive-features {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .responsive-features {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .responsive-features {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.responsive-specifications-section {
+  background-color: white;
+  height: 54vh;
+  z-index: 1510505105106;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .responsive-specifications-section {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .responsive-specifications-section {
+    height: 100vh;
+  }
+}
+
+.responsive-specifications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.responsive-specifications h1,
+.responsive-specifications p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@media (max-width: 1366px) {
+  .responsive-specifications h1 {
+    font-size: 1.2em;
+  }
+  .responsive-specifications p {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 767px) {
+  .responsive-specifications h1 {
+    font-size: 1.2em;
+  }
+  .responsive-specifications p {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .responsive-specifications h1 {
+    font-size: 1em;
+  }
+  .responsive-specifications p {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) and (max-width: 1023px) and (orientation: landscape) {
+  .responsive-specifications h1 {
+    font-size: 0.9em;
+  }
+  .responsive-specifications p {
+    font-size: 0.65em;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
