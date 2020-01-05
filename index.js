@@ -32,9 +32,7 @@ window.ontouchmove = e => {
 window.onload = () => {
   startAnimation();
 };
-document.onload = () => {
-  startAnimation;
-};
+
 edge.addEventListener("mousedown", () => mouseDrag(event));
 edge.addEventListener("touchstart", () => touchDrag(event), { passive: true });
 
