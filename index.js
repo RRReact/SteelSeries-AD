@@ -155,21 +155,13 @@ const responsiveY = y => {
   }
 };
 const startAnimation = () => {
-  const checkWidthSpec = () => {
+  const checkWidth = display => {
     if (x.matches) {
       return "none";
     } else {
-      return "initial";
+      return display;
     }
   };
-  const checkWidthFeat = () => {
-    if (x.matches) {
-      return "none";
-    } else {
-      return "flex";
-    }
-  };
-
   const tl = gsap.timeline();
   tl.set([right, blackHeadset, whiteHeadset, text], { opacity: 1 })
     .from(right, { duration: 1, x: innerWidth })
@@ -181,8 +173,8 @@ const startAnimation = () => {
     .from(blackHeadset, { duration: 1, x: innerWidth }, "<")
     .from(whiteHeadset, { duration: 1, x: -innerWidth }, "<")
     .from(text, { duration: 1, x: -innerWidth }, "<")
-    .set(features, { display: checkWidthFeat })
-    .set(specifications, { display: checkWidthSpec });
+    .set(features, { display: checkWidth("flex") })
+    .set(specifications, { display: checkWidth("initial") });
 };
 
 responsiveX(x);
