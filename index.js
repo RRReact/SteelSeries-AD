@@ -22,12 +22,10 @@ let featuresSection = null;
 let specificationsSection = null;
 
 window.onmousemove = e => {
-  let x = getComputedStyle(right).left;
-  edge2.style.left = x;
+  edgePosition();
 };
 window.ontouchmove = e => {
-  let x = getComputedStyle(right).left;
-  edge2.style.left = x;
+  edgePosition();
 };
 window.onload = () => {
   startAnimation();
@@ -52,8 +50,7 @@ const mouseDrag = e => {
   window.onmousemove = e => {
     let x = e.clientX;
     slider.style.left = x + "px";
-    let style = getComputedStyle(right).left;
-    edge2.style.left = style;
+    edgePosition();
   };
   all.addEventListener("mouseup", removeDragEventListener, true);
 };
@@ -63,8 +60,7 @@ const touchDrag = e => {
   window.ontouchmove = e => {
     let x = e.touches[0].clientX;
     slider.style.left = x + "px";
-    let style = getComputedStyle(right).left;
-    edge2.style.left = style;
+    edgePosition();
   };
   all.addEventListener("touchend", removeDragEventListener, true);
 };
@@ -76,8 +72,7 @@ const removeDragEventListener = () => {
 
 const blackOrWhite = color => {
   window.onmousemove = e => {
-    let style = getComputedStyle(right).left;
-    edge2.style.left = style;
+    edgePosition();
   };
   if (color === "white") {
     gsap.to(right, 1, { left: window.innerWidth, ease: "power2.in" });
@@ -172,6 +167,11 @@ const changedText = txt => {
   text.forEach(item => {
     item.innerHTML = txt;
   });
+};
+
+const edgePosition = () => {
+  let style = getComputedStyle(right).left;
+  edge2.style.left = style;
 };
 responsiveX(x);
 responsiveY(y);
