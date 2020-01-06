@@ -48,9 +48,7 @@ black.forEach(item => {
 
 const mouseDrag = e => {
   e.preventDefault();
-  text.forEach(item => {
-    item.innerHTML = "<span><</span>Drag<span>></span>";
-  });
+  changedText("<span><</span>Drag<span>></span>");
   window.onmousemove = e => {
     let x = e.clientX;
     slider.style.left = x + "px";
@@ -61,9 +59,7 @@ const mouseDrag = e => {
 };
 
 const touchDrag = e => {
-  text.forEach(item => {
-    item.innerHTML = "<span><</span>Drag<span>></span>";
-  });
+  changedText("<span><</span>Drag<span>></span>");
   window.ontouchmove = e => {
     let x = e.touches[0].clientX;
     slider.style.left = x + "px";
@@ -73,9 +69,7 @@ const touchDrag = e => {
   all.addEventListener("touchend", removeDragEventListener, true);
 };
 const removeDragEventListener = () => {
-  text.forEach(item => {
-    item.innerHTML = "Drag the edge and explore";
-  });
+  changedText("Drag the edge and explore");
   window.onmousemove = null;
   window.ontouchmove = null;
 };
@@ -174,7 +168,11 @@ const startAnimation = () => {
     .set(features, { display: checkWidth("flex") })
     .set(specifications, { display: checkWidth("initial") });
 };
-
+const changedText = txt => {
+  text.forEach(item => {
+    item.innerHTML = txt;
+  });
+};
 responsiveX(x);
 responsiveY(y);
 x.addListener(responsiveX);
