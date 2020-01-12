@@ -43,8 +43,12 @@ white.forEach(item => {
 black.forEach(item => {
   item.addEventListener("click", () => blackOrWhite("black"));
 });
-
-const mouseDrag = e => {
+responsiveX(x);
+responsiveY(y);
+x.addListener(responsiveX);
+y.addListener(responsiveY);
+/// function declarations
+function mouseDrag(e) {
   e.preventDefault();
   changedText("<span><</span>Drag<span>></span>");
   window.onmousemove = e => {
@@ -53,9 +57,9 @@ const mouseDrag = e => {
     edgePosition();
   };
   all.addEventListener("mouseup", removeDragEventListener, true);
-};
+}
 
-const touchDrag = e => {
+function touchDrag(e) {
   changedText("<span><</span>Drag<span>></span>");
   window.ontouchmove = e => {
     let x = e.touches[0].clientX;
@@ -63,14 +67,14 @@ const touchDrag = e => {
     edgePosition();
   };
   all.addEventListener("touchend", removeDragEventListener, true);
-};
-const removeDragEventListener = () => {
+}
+function removeDragEventListener() {
   changedText("Drag the edge and explore");
   window.onmousemove = null;
   window.ontouchmove = null;
-};
+}
 
-const blackOrWhite = color => {
+function blackOrWhite(color) {
   window.onmousemove = e => {
     edgePosition();
   };
@@ -79,9 +83,9 @@ const blackOrWhite = color => {
   } else if (color === "black") {
     gsap.to(right, 1, { left: 0, ease: "power2.in" });
   }
-};
+}
 //MediaQuery max-width:1366
-const responsiveX = x => {
+function responsiveX(x) {
   function insterAfter(afterNode, newNode) {
     return afterNode.parentNode.insertBefore(newNode, main.afterNode);
   }
@@ -127,9 +131,9 @@ const responsiveX = x => {
     //set overflow
     all.style.overflow = "visible";
   }
-};
+}
 //MediaQuery min-width:1366
-const responsiveY = y => {
+function responsiveY(y) {
   if (
     y.matches === true &&
     all.contains(document.querySelector(".responsive-features-section"))
@@ -140,8 +144,8 @@ const responsiveY = y => {
     specifications.style.display = "flex";
     specifications.style.flexDirection = "column";
   }
-};
-const startAnimation = () => {
+}
+function startAnimation() {
   const checkWidth = display => {
     if (x.matches) {
       return "none";
@@ -162,18 +166,14 @@ const startAnimation = () => {
     .from(text, { duration: 1, x: -innerWidth }, "<")
     .set(features, { display: checkWidth("flex") })
     .set(specifications, { display: checkWidth("initial") });
-};
-const changedText = txt => {
+}
+function changedText(txt) {
   text.forEach(item => {
     item.innerHTML = txt;
   });
-};
+}
 
-const edgePosition = () => {
+function edgePosition() {
   let style = getComputedStyle(right).left;
   edge2.style.left = style;
-};
-responsiveX(x);
-responsiveY(y);
-x.addListener(responsiveX);
-y.addListener(responsiveY);
+}
