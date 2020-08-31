@@ -21,10 +21,10 @@ let y = window.matchMedia("(min-width:1367px)");
 let featuresSection = null;
 let specificationsSection = null;
 
-window.onmousemove = e => {
+window.onmousemove = (e) => {
   edgePosition();
 };
-window.ontouchmove = e => {
+window.ontouchmove = (e) => {
   edgePosition();
 };
 window.onload = () => {
@@ -37,10 +37,10 @@ edge.addEventListener("touchstart", () => touchDrag(event), { passive: true });
 edge2.addEventListener("mousedown", () => mouseDrag(event));
 edge2.addEventListener("touchstart", () => touchDrag(event), { passive: true });
 
-white.forEach(item => {
+white.forEach((item) => {
   item.addEventListener("click", () => blackOrWhite("white"));
 });
-black.forEach(item => {
+black.forEach((item) => {
   item.addEventListener("click", () => blackOrWhite("black"));
 });
 responsiveX(x);
@@ -51,7 +51,7 @@ y.addListener(responsiveY);
 function mouseDrag(e) {
   e.preventDefault();
   changedText("<span><</span>Drag<span>></span>");
-  window.onmousemove = e => {
+  window.onmousemove = (e) => {
     let x = e.clientX;
     slider.style.left = x + "px";
     edgePosition();
@@ -61,7 +61,7 @@ function mouseDrag(e) {
 
 function touchDrag(e) {
   changedText("<span><</span>Drag<span>></span>");
-  window.ontouchmove = e => {
+  window.ontouchmove = (e) => {
     let x = e.touches[0].clientX;
     slider.style.left = x + "px";
     edgePosition();
@@ -75,7 +75,7 @@ function removeDragEventListener() {
 }
 
 function blackOrWhite(color) {
-  window.onmousemove = e => {
+  window.onmousemove = (e) => {
     edgePosition();
   };
   if (color === "white") {
@@ -146,7 +146,7 @@ function responsiveY(y) {
   }
 }
 function startAnimation() {
-  const checkWidth = display => {
+  const checkWidth = (display) => {
     if (x.matches) {
       return "none";
     } else {
@@ -157,7 +157,7 @@ function startAnimation() {
   tl.set([right, blackHeadset, whiteHeadset, text], { opacity: 1 })
     .from(right, { duration: 1, x: innerWidth })
     .set(right, {
-      clearProps: "transform"
+      clearProps: "transform",
     })
     .to(logo, { duration: 1, opacity: 1 })
     .to(colors, { duration: 1, opacity: 1 }, "<")
@@ -168,7 +168,7 @@ function startAnimation() {
     .set(specifications, { display: checkWidth("initial") });
 }
 function changedText(txt) {
-  text.forEach(item => {
+  text.forEach((item) => {
     item.innerHTML = txt;
   });
 }
